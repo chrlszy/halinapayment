@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+:root {
+  --accent-color: #986c4a;
+  --base-color: #f8f7f6;
+  --text-color: #b59f8a;
+  --input-color: #fdfdf7;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--base-color);
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.logo img {
+  display: flex;
+  justify-content: center;
+  width: 15rem;
+  user-select: none;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  margin-left: 40px;
+  color: var(--accent-color);
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: var(--accent-color);
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  border-radius: 3px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav-links a:hover:after {
+  transform-origin: right;
+  transform: scaleX(1);
+}
+
+.nav-links .btnLogin-popup {
+  height: 50px;
+  width: 130px;
+  margin-left: 40px;
+  border: 2px solid #986c4a;
+  background: transparent;
+  outline: none;
+  border-color: var(--accent-color);
+  border-radius: 10px;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: 0.5s ease;
+}
+
+.nav-links .btnLogin-popup:hover {
+  background-color: var(--accent-color);
+  color: var(--input-color);
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 420px;
+  background-color: #efece4;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 0.5s ease, height 0.2s ease;
+}
+
+.wrapper.active-popup {
+  transform: scale(1);
+}
+
+.wrapper.active {
+  height: 520px;
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 50px;
+}
+
+.wrapper .form-box.login {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+  transition: none;
+  transform: translateX(-400px);
+}
+
+.wrapper.active .form-box.signup {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+}
+
+.wrapper .form-box.signup {
+  position: absolute;
+  transition: none;
+  transform: translateX(400px);
+}
+
+.wrapper .icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #502515;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: #502515;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  z-index: 1;
+}
+.form-box h1 {
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: #502515;
+  font-size: 2.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+form {
+  width: min(400px, 100%);
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form label {
+  flex-shrink: 0;
+  height: 50px;
+  width: 50px;
+  background-color: var(--accent-color);
+  fill: var(--base-color);
+  color: var(--base-color);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+form input {
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  font: inherit;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid var(--input-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
+}
+form input:hover {
+  border-color: var(--accent-color);
+}
+form input:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+div:has(input:focus) > label {
+  background-color: var(--text-color);
+}
+form button {
+  margin-top: 10px;
+  border: none;
+  font: inherit;
+  padding: 0.8em 4em;
+  border-radius: 40px;
+  background-color: var(--accent-color);
+  color: var(--input-color);
+  transition: 150ms ease;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #502515;
+}
+form button:focus {
+  outline: none;
+  background-color: var(--text-color);
+}
+
+.login-register {
+  font-size: 0.9em;
+  color: #502515;
+  text-align: center;
+}
+
+.login-register p a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #502515;
+}
+
+.login-register p a:hover {
+  text-decoration: underline;
+}
