@@ -19,3 +19,15 @@ btnPopup.addEventListener("click", () => {
 closePopup.addEventListener("click", () => {
   wrapper.classList.remove("active-popup");
 });
+
+const overlay = document.querySelector(".overlay-bg");
+
+btnPopup.addEventListener("click", () => {
+  wrapper.classList.add("active-popup");
+  overlay.classList.add("active");
+});
+
+closePopup.addEventListener("click", () => {
+  wrapper.classList.remove("active-popup");
+  overlay.classList.remove("active");
+});
