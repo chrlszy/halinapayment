@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Playfair Display", serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -155,6 +156,7 @@ body {
   border-bottom-left-radius: 20px;
   z-index: 1;
 }
+
 .form-box h1 {
   margin-top: 15px;
   margin-bottom: 0;
@@ -288,11 +290,18 @@ form button:focus {
 .feature h3 {
   color: var(--accent-color);
 }
+
 .feature img {
   margin-top: 20px;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.feature-items img:hover {
+  transform: scale(1.03);
 }
 
 /* Services */
@@ -344,11 +353,97 @@ form button:focus {
   font-size: 12px;
 }
 
-.venues img {
+.venue-items img {
   padding: 15px;
   width: 100%;
   height: 70%;
-  border-radius: 10px;
+  border-radius: 20px;
+}
+
+/* Services Made */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #efece4;
+  padding: 25px 50px;
+  border-radius: 30px;
+  width: 80%;
+  max-width: 900px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.booking-container {
+  display: flex;
+  gap: 5rem;
+}
+
+.booking-form {
+  justify-content: center;
+  flex: 1;
+}
+
+.booking-form select {
+  width: 100%;
+  background-color: var(--input-color);
+  border-radius: 0 10px 10px 0;
+  outline: none;
+  border: 2px solid var(--input-color);
+  padding: 0px 10px;
+  font-size: 15px;
+}
+
+.booking-form select:hover {
+  border: 2px solid var(--accent-color);
+}
+
+.booking-form label {
+  width: 100px;
+  font-size: 16px;
+}
+
+.room-preview {
+  flex: 2;
+  text-align: center;
+}
+
+.room-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.icon-close2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #502515;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: #502515;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  z-index: 1;
 }
 
 /* Overlay Dark */
