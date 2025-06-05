@@ -276,28 +276,29 @@ form button:focus {
 
 .feature {
   display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  gap: 20px;
 }
 
 .feature-items {
-  margin: 20px;
-  height: 300px;
   width: 400px;
-  padding-top: 15px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  height: 400px;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 50px;
 }
 .feature h3 {
   color: var(--accent-color);
+  margin-bottom: 15px;
 }
 
 .feature img {
-  margin-top: 20px;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: 0.2s ease;
+  height: 60%;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .feature-items img:hover {
@@ -322,7 +323,7 @@ form button:focus {
 .venues {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin: 50px 0;
 }
 .venue-items {
   flex-basis: 28%;
@@ -444,6 +445,109 @@ form button:focus {
   align-items: center;
   border-bottom-left-radius: 20px;
   z-index: 1;
+}
+
+/* Equipments */
+#Equipments {
+  width: 100%;
+  height: 100vh;
+  padding: 7rem 0;
+  color: #502515;
+}
+
+.layer {
+  position: absolute;
+  left: 0;
+  background-color: #efece4;
+  padding: 3rem 5rem;
+  width: 100%;
+  height: 80%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.equipment-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.equipment-title h1 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.equipment-title p {
+  margin-top: 10px;
+  font-weight: 5pz;
+}
+.btn-view-more {
+  padding: 1em 4em;
+  border: 2px solid #502515;
+  background: transparent;
+  outline: none;
+  border-color: #502515;
+  border-radius: 10px;
+  color: #502515;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.btn-view-more:hover {
+  color: #efece4;
+  background: #502515;
+}
+
+.equipment-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 0;
+  max-width: 100%;
+}
+
+.equipment-item {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 350px;
+  background-color: #f8f7f6;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+
+.equipment-item:hover {
+  transform: translateY(-7px);
+}
+
+.equipment-item img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.equipment-item h4 {
+  margin: 10px 0 5px;
+  color: #53280a;
+}
+
+.equipment-item p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.equipment-list::-webkit-scrollbar {
+  display: none;
+}
+
+.equipment-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Overlay Dark */

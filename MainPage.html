@@ -14,7 +14,8 @@
       <nav class="nav-links">
         <a href="#">HOME</a>
         <a href="#">ABOUT</a>
-        <a href="#SERVICES">SERVICES</a>
+        <a href="#Services">SERVICES</a>
+        <a href="#Equipments">EQUIPMENT</a>
         <a href="#">CONTACT</a>
         <button class="btnLogin-popup">LOG IN</button>
       </nav>
@@ -32,61 +33,87 @@
     <section class="feature">
       <div class="feature-items">
         <h3>OUR SERVICES</h3>
-        <img src="background.jpg" alt="Services" />
+        <a href="#SERVICES">
+          <img src="background.jpg" alt="Services" />
+        </a>
       </div>
       <div class="feature-items">
         <h3>CLIENT TESTIMONIALS</h3>
-        <img src="background.png" alt="Testimonials" />
+        <a href="#">
+          <img src="background.png" alt="Testimonials" />
+        </a>
       </div>
       <div class="feature-items">
-        <h3>PORTFOLIO</h3>
-        <img src="background.jpg" alt="Portfolio" />
+        <h3>EQUIPMENT RENTALS</h3>
+        <a href="#Equipments">
+          <img src="background.jpg" alt="Services" />
+        </a>
       </div>
     </section>
 
     <!-- SERVICES  -->
-    <section class="services" id="SERVICES">
+    <section class="services" id="Services">
       <h1>Venues</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati
-        porro, placeat amet, quae velit consectetur recusandae ipsum illo, alias
-        esse officia voluptas ab explicabo ea quasi tempore modi quaerat beatae!
+        Welcome to Halina Event Venue, where unforgettable moments are made.
+        Whether it's a wedding, birthday, corporate gathering, or any special
+        celebration, our elegant and versatile venue is designed to bring your
+        vision to life.
       </p>
 
       <div class="venues">
-        <div class="venue-items" onclick="toggleModal()">
+        <div class="venue-items" onclick="openBookingModal('room')">
           <img src="background.jpg" alt="img" />
           <h3>Room</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            repellat error optio corporis modi, illo ipsum laudantium eligendi
-            voluptate porro!
+            Our rooms provide a cozy, air-conditioned space ideal for small
+            celebrations or private meetings. Each one is thoughtfully designed
+            for comfort, convenience, and a welcoming atmosphere.
           </p>
         </div>
 
-        <div class="venue-items">
+        <div class="venue-items" onclick="openBookingModal('hall')">
           <img src="background.png" alt="img" />
           <h3>Hall</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            repellat error optio corporis modi, illo ipsum laudantium eligendi
-            voluptate porro!
+            The event hall is spacious, elegant, and suited for weddings,
+            birthdays, and corporate functions. It features flexible layouts and
+            stylish decor to match any event theme or concept.
           </p>
         </div>
 
-        <div class="venue-items">
+        <div class="venue-items" onclick="openBookingModal('amenity')">
           <img src="background.jpg" alt="img" />
           <h3>Amenities</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            repellat error optio corporis modi, illo ipsum laudantium eligendi
-            voluptate porro!
+            Halina Event Place includes a swimming pool, basketball court, and
+            landscaped garden for leisure and photos. Ample parking and clean
+            restrooms are also available for every guest’s comfort.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Room Booking -->
+    <!-- Equipment Rental -->
+    <section id="Equipments">
+      <div class="layer">
+        <div class="equipment-title">
+          <div class="title">
+            <h1>Feature Equipment</h1>
+            <p>List of available equipments</p>
+          </div>
+          <div class="view-more">
+            <button class="btn-view-more">VIEW MORE</button>
+          </div>
+        </div>
+
+        <div class="equipment-list" id="equipmentList">
+          <!-- JavaScript will populate this -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking -->
     <div id="bookingModal" class="modal hidden">
       <div class="modal-content">
         <span class="icon-close2" onclick="toggleModal()">
@@ -116,12 +143,17 @@
             </div>
 
             <div>
-              <label for="date">Date</label>
+              <label for="date">Start Date</label>
               <input type="date" id="date" required />
             </div>
 
             <div>
-              <label for="time">Time</label>
+              <label for="date-end">End Date</label>
+              <input type="date" id="date" required />
+            </div>
+
+            <div>
+              <label for="time">Time In</label>
               <input type="time" id="time" required />
             </div>
 
