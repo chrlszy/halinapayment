@@ -31,7 +31,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 25px 60px;
-  background-color: transparent;
+  background-color: var(--base-color);
   z-index: 100;
 }
 
@@ -170,7 +170,7 @@ body {
 form {
   width: min(400px, 100%);
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -277,13 +277,13 @@ form button:focus {
 .feature {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 20px 0;
   gap: 20px;
 }
 
 .feature-items {
   width: 400px;
-  height: 400px;
+  height: 300px;
   text-align: center;
   overflow: hidden;
   padding-bottom: 50px;
@@ -295,7 +295,7 @@ form button:focus {
 
 .feature img {
   width: 100%;
-  height: 60%;
+  height: 100%;
   cursor: pointer;
   transition: transform 0.3s ease;
   overflow: hidden;
@@ -401,7 +401,7 @@ form button:focus {
   flex: 1;
 }
 
-.booking-form select {
+select {
   width: 100%;
   background-color: var(--input-color);
   border-radius: 0 10px 10px 0;
@@ -548,6 +548,153 @@ form button:focus {
 .equipment-list {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Testimonials */
+#testimonials-section {
+  padding: 50px;
+}
+.testimonials {
+  padding: 100px;
+  background-image: url(background.jpg);
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 100%;
+}
+
+.testimonials p {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.testimonials h2 {
+  font-size: 50px;
+  font-weight: 100px;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-list {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial-card {
+  min-width: 300px;
+  background-color: #fffaf6;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  scroll-snap-align: start;
+}
+.testimonial-card p {
+  font-style: italic;
+  color: #555;
+  margin: 1rem 0;
+  position: relative;
+}
+.testimonial-footer {
+  font-weight: bold;
+  color: #333;
+}
+.testimonial-footer span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #777;
+}
+.stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.testimonial-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Contact Us */
+.contact-us {
+  text-align: center;
+  padding: 100px 120px;
+  height: 100vh;
+  width: 100%;
+}
+
+.contact-us h1 {
+  font-size: 50px;
+  font-weight: 100px;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.contact-us h3 {
+  font-size: 30px;
+}
+
+.forms {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 450px;
+}
+
+.forms-items {
+  margin-top: 50px;
+  border-radius: 20px;
+  background-color: #efece4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: 450px;
+}
+
+.review label {
+  width: 100px;
+  font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  border-color: 2px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fdfdf7;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+
+/* Footer */
+#About-US {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#About-US h1 {
+  font-size: 50px;
+  margin: 50px 0;
+}
+
+.socials .fa-brands {
+  color: #502515;
+  font-size: 30px;
+  margin: 50px 20px;
+  cursor: pointer;
+}
+
+.fa-brands:hover {
+  transform: translateY(-3px);
 }
 
 /* Overlay Dark */

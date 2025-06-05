@@ -190,9 +190,79 @@ equipmentData.forEach((eq) => {
   list.appendChild(item);
 });
 
+// scrolling
 const scrollContainer = document.querySelector(".equipment-list");
 
 scrollContainer.addEventListener("wheel", (evt) => {
   evt.preventDefault();
   scrollContainer.scrollLeft += evt.deltaY;
 });
+
+// Testimonials
+const testimonials = [
+  {
+    name: "Maria Clara",
+    venue: "Gunita Hall",
+    feedback: "The ambiance was amazing. Perfect for our engagement!",
+    rating: 5,
+  },
+  {
+    name: "Juan Dela Cruz",
+    venue: "Tala Room",
+    feedback: "Everything was smooth and organized. Highly recommended.",
+    rating: 4,
+  },
+  {
+    name: "Liza Soberano",
+    venue: "Sulyap Room",
+    feedback: "Beautiful interiors and attentive staff!",
+    rating: 5,
+  },
+  {
+    name: "Juan Dela Cruz",
+    venue: "Tala Room",
+    feedback: "Everything was smooth and organized. Highly recommended.",
+    rating: 4,
+  },
+
+  {
+    name: "Juan Dela Cruz",
+    venue: "Tala Room",
+    feedback: "Everything was smooth and organized. Highly recommended.",
+    rating: 4,
+  },
+  {
+    name: "Juan Dela Cruz",
+    venue: "Tala Room",
+    feedback: "Everything was smooth and organized. Highly recommended.",
+    rating: 4,
+  },
+  {
+    name: "Juan Dela Cruz",
+    venue: "Tala Room",
+    feedback: "Everything was smooth and organized. Highly recommended.",
+    rating: 4,
+  },
+];
+
+function displayTestimonials() {
+  const container = document.getElementById("testimonialList");
+  container.innerHTML = testimonials
+    .map(
+      (t) => `
+    <div class="testimonial-card">
+      <p>${t.feedback}</p>
+      <div class="testimonial-footer">
+        ${t.name}
+        <span>${t.venue}</span>
+        <div class="stars">${"★".repeat(t.rating)}${"☆".repeat(
+        5 - t.rating
+      )}</div>
+      </div>
+    </div>
+  `
+    )
+    .join("");
+}
+
+displayTestimonials();
