@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MainPage</title>
+    <title>Welcome to Halina</title>
     <link rel="stylesheet" href="mainbodystyle.css" />
     <script type="text/javascript" src="script.js" defer></script>
     <script
@@ -19,7 +19,6 @@
         <a href="#">HOME</a>
         <a href="#About-US">ABOUT</a>
         <a href="#Services">SERVICES</a>
-        <a href="#Equipments">EQUIPMENT</a>
         <a href="#contact">CONTACT</a>
         <button class="btnLogin-popup">LOG IN</button>
       </nav>
@@ -32,87 +31,25 @@
           <h1>We believe in Minimalism. Less is More.</h1>
         </div>
       </div>
-    </section>
 
-    <section class="feature">
-      <div class="feature-items">
-        <h3>OUR SERVICES</h3>
-        <a href="#Services">
-          <img src="background.jpg" alt="Services" />
-        </a>
-      </div>
-      <div class="feature-items">
-        <h3>CLIENT TESTIMONIALS</h3>
-        <a href="#testimonials-section">
-          <img src="background.png" alt="Testimonials" />
-        </a>
-      </div>
-      <div class="feature-items">
-        <h3>EQUIPMENT RENTALS</h3>
-        <a href="#Equipments">
-          <img src="background.jpg" alt="Services" />
-        </a>
-      </div>
-    </section>
-
-    <!-- SERVICES  -->
-    <section class="services" id="Services">
-      <h1>Venues</h1>
-      <p>
-        Welcome to Halina Event Venue, where unforgettable moments are made.
-        Whether it's a wedding, birthday, corporate gathering, or any special
-        celebration, our elegant and versatile venue is designed to bring your
-        vision to life.
-      </p>
-
-      <div class="venues">
-        <div class="venue-items" onclick="openBookingModal('room')">
-          <img src="background.jpg" alt="img" />
-          <h3>Room</h3>
-          <p>
-            Our rooms provide a cozy, air-conditioned space ideal for small
-            celebrations or private meetings. Each one is thoughtfully designed
-            for comfort, convenience, and a welcoming atmosphere.
-          </p>
+      <div class="feature">
+        <div class="feature-items">
+          <h3>OUR SERVICES</h3>
+          <a href="#Services">
+            <img src="background.jpg" alt="Services" />
+          </a>
         </div>
-
-        <div class="venue-items" onclick="openBookingModal('hall')">
-          <img src="background.png" alt="img" />
-          <h3>Hall</h3>
-          <p>
-            The event hall is spacious, elegant, and suited for weddings,
-            birthdays, and corporate functions. It features flexible layouts and
-            stylish decor to match any event theme or concept.
-          </p>
+        <div class="feature-items">
+          <h3>CLIENT TESTIMONIALS</h3>
+          <a href="#testimonials-section">
+            <img src="background.png" alt="Testimonials" />
+          </a>
         </div>
-
-        <div class="venue-items" onclick="openBookingModal('amenity')">
-          <img src="background.jpg" alt="img" />
-          <h3>Amenities</h3>
-          <p>
-            Halina Event Place includes a swimming pool, basketball court, and
-            landscaped garden for leisure and photos. Ample parking and clean
-            restrooms are also available for every guest’s comfort.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Equipment Rental -->
-    <section id="Equipments">
-      <div class="layer">
-        <div class="equipment-title">
-          <div class="title">
-            <h1>Feature Equipment</h1>
-            <p>List of available equipments</p>
-          </div>
-          <div class="view-more">
-            <button class="btn-view-more">VIEW MORE</button>
-          </div>
-        </div>
-
-        <div class="equipment-list" id="equipmentList">
-          <!-- JavaScript will populate this -->
+        <div class="feature-items">
+          <h3>CONTACT US</h3>
+          <a href="#contact">
+            <img src="background.jpg" alt="Services" />
+          </a>
         </div>
       </div>
     </section>
@@ -130,92 +67,55 @@
     <!--CONTACT US-->
     <section class="contact-us" id="contact">
       <h1>CONNECT WITH US</h1>
-      <p>Ask questions and write reviews for the development of Halina</p>
-      <div class="forms">
-        <div class="forms-items contact">
-          <h3>Contact US</h3>
-          <p>How can we help? We're all ears!</p>
-          <form class="contact-form">
-            <div>
-              <label for="name-input">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#f8f7f6"
-                >
-                  <path
-                    d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"
-                  />
-                </svg>
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name-input"
-                placeholder="Full name"
-              />
-            </div>
-            <div>
-              <label for="email-input">
-                <span>@</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email-input"
-                placeholder="Mygmail@gmail.com"
-                required
-              />
-            </div>
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Ask a question..."
-                required
-              ></textarea>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-
-        <div class="forms-items review">
-          <h3>Write a Review</h3>
-          <p>Share your feedback with us!</p>
-          <form class="review-form">
-            <div>
-              <label for="venueUsed">Venue</label>
-              <select id="venueUsed">
-                <option value="">Venue</option>
-                <!-- Venue will be dynamically loaded here -->
-              </select>
-            </div>
-            <div>
-              <label for="review_rating">Rating</label>
-              <select id="review_rating">
-                <option value="">Select Rating</option>
-                <option value="5">5</option>
-                <option value="4">4</option>
-                <option value="3">3</option>
-                <option value="2">2</option>
-                <option value="1">1</option>
-              </select>
-            </div>
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Write a review..."
-                required
-              ></textarea>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+      <p>Ask questions to clarify your needs.</p>
+      <div class="forms-items contact">
+        <h3>Contact US</h3>
+        <p>How can we help? We're all ears!</p>
+        <form class="contact-form">
+          <div>
+            <label for="name-input">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#f8f7f6"
+              >
+                <path
+                  d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"
+                />
+              </svg>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name-input"
+              placeholder="Full name"
+            />
+          </div>
+          <div>
+            <label for="email-input">
+              <span>@</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email-input"
+              placeholder="Mygmail@gmail.com"
+              required
+            />
+          </div>
+          <div>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Ask a question..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </section>
 

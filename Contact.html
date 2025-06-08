@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halina Page</title>
+    <link rel="stylesheet" href="mainbodystyle.css" />
+    <script type="text/javascript" src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/d7c47677ad.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="HalinaSystemLogo.png" />
+      </div>
+
+      <nav class="nav-links">
+        <a href="UserPage.html">HOME</a>
+        <a href="#About-US">ABOUT</a>
+        <a href="Services.html">BOOKING</a>
+        <a href="Equipment.html">EQUIPMENT</a>
+        <a href="#">CONTACT</a>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      </nav>
+
+      <div class="sub-menu-wrap">
+        <div class="sub-menu">
+          <h2>Halina Event System</h2>
+          <hr />
+          <a href="#" class="sub-menu-link">
+            <p>Edit profile</p>
+            <span>&gt;</span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <p>Transaction History</p>
+            <span>&gt;</span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <p>Logout</p>
+            <span>&gt;</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!--CONTACT US-->
+    <section class="contact-us" id="contact">
+      <h1>CONNECT WITH US</h1>
+      <p>Write reviews for the development of Halina</p>
+      <div class="forms-items review">
+        <h3>Write a Review</h3>
+        <p>Share your feedback with us!</p>
+        <form class="review-form">
+          <div>
+            <label for="venueUsed">Venue</label>
+            <select id="venueUsed">
+              <option value="">Venue</option>
+              <!-- Venue will be dynamically loaded here -->
+            </select>
+          </div>
+          <div>
+            <label for="review_rating">Rating</label>
+            <select id="review_rating">
+              <option value="">Select Rating</option>
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+          <div>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write a review..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer/About us -->
+    <section id="About-US">
+      <h1>About Us</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+        praesentium perspiciatis modi voluptatem <br />
+        sunt officiis repellendus nam? Ratione magni soluta vitae iste aliquid,
+        <br />
+        laudantium culpa, repellendus earum corrupti a ad!
+      </p>
+      <div class="socials">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-facebook-messenger"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+      </div>
+      <p>© 2025 Halina Event Venue. All Rights Reserved.</p>
+    </section>
+  </body>
+</html>

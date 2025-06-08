@@ -1,77 +1,83 @@
+// DOM Elements
 const wrapper = document.querySelector(".wrapper");
 const loginLink = document.querySelector(".login-link");
 const registerLink = document.querySelector(".signup-link");
 const btnPopup = document.querySelector(".btnLogin-popup");
 const closePopup = document.querySelector(".icon-close");
 const overlay = document.querySelector(".overlay-bg");
-const roomClick = document.querySelector(".venue-items.room");
 
-registerLink.addEventListener("click", () => {
+// Event Listeners for Login/Register Popup
+registerLink?.addEventListener("click", () => {
   wrapper.classList.add("active");
 });
 
-loginLink.addEventListener("click", () => {
+loginLink?.addEventListener("click", () => {
   wrapper.classList.remove("active");
 });
 
-btnPopup.addEventListener("click", () => {
-  wrapper.classList.add("active-popup");
-});
-
-closePopup.addEventListener("click", () => {
-  wrapper.classList.remove("active-popup");
-});
-
-btnPopup.addEventListener("click", () => {
+btnPopup?.addEventListener("click", () => {
   wrapper.classList.add("active-popup");
   overlay.classList.add("active");
 });
 
-closePopup.addEventListener("click", () => {
+closePopup?.addEventListener("click", () => {
   wrapper.classList.remove("active-popup");
   overlay.classList.remove("active");
 });
 
+let subMenu = document.getElementById(".sub-menu-wrap");
+function toggleMenu() {
+  const subMenu = document.querySelector(".sub-menu-wrap");
+  subMenu.classList.toggle("open-menu");
+}
+
+// Toggle Modal Visibility
 function toggleLogin() {
-  document.getElementByClass("bookingModal").classList.toggle("hidden");
+  document.querySelector(".bookingModal")?.classList.toggle("hidden");
 }
 
 function toggleModal() {
-  document.getElementById("bookingModal").classList.toggle("hidden");
+  document.getElementById("bookingModal")?.classList.toggle("hidden");
 }
 
+// Open Booking Modal Based on Type
 function openBookingModal(type) {
   const modal = document.getElementById("bookingModal");
+  if (!modal) return;
+
   const formTitle = modal.querySelector(".booking-form h2");
   const select = document.getElementById("roomSelect");
 
   modal.classList.remove("hidden");
 
-  if (type === "room") {
-    formTitle.textContent = "Room Booking";
-    select.innerHTML = `
-      <option value="tala">Tala</option>
-      <option value="sulyap">Sulyap</option>
-      <option value="gunita">Gunita</option>
-    `;
-  } else if (type === "hall") {
-    formTitle.textContent = "Hall Booking";
-    select.innerHTML = `
-      <option value="grandhall">Grand Hall</option>
-      <option value="gardenhall">Garden Hall</option>
-    `;
-  } else if (type === "amenity") {
-    formTitle.textContent = "Amenity Booking";
-    select.innerHTML = `
-      <option value="pool">Pool</option>
-      <option value="spa">Spa</option>
-      <option value="gym">Gym</option>
-    `;
-  }
+  const optionsMap = {
+    room: [
+      { value: "tala", label: "Tala" },
+      { value: "sulyap", label: "Sulyap" },
+      { value: "gunita", label: "Gunita" },
+    ],
+    hall: [
+      { value: "grandhall", label: "Grand Hall" },
+      { value: "gardenhall", label: "Garden Hall" },
+    ],
+    amenity: [
+      { value: "pool", label: "Pool" },
+      { value: "spa", label: "Spa" },
+      { value: "gym", label: "Gym" },
+    ],
+  };
+
+  formTitle.textContent = `${
+    type.charAt(0).toUpperCase() + type.slice(1)
+  } Booking`;
+  select.innerHTML = optionsMap[type]
+    .map((opt) => `<option value="${opt.value}">${opt.label}</option>`)
+    .join("");
 
   updateRoomDetails();
 }
 
+// Update Room/Amenity/Hall Details Dynamically
 function updateRoomDetails() {
   const select = document.getElementById("roomSelect");
   const image = document.getElementById("roomImage");
@@ -130,7 +136,7 @@ function updateRoomDetails() {
   }
 }
 
-// Equipments
+// Equipment Data
 const equipmentData = [
   {
     name: "Projector",
@@ -162,43 +168,26 @@ const equipmentData = [
     price: "₱1,200",
     image: "background.jpg",
   },
-  {
-    name: "Mic Stand",
-    description: "Adjustable stand",
-    price: "₱300",
-    image: "background.png",
-  },
-  {
-    name: "Mic Stand",
-    description: "Adjustable stand",
-    price: "₱300",
-    image: "background.png",
-  },
 ];
 
-const list = document.getElementById("equipmentList");
+// Render Equipment Items
+const equipmentList = document.getElementById("equipmentList");
 
-equipmentData.forEach((eq) => {
-  const item = document.createElement("div");
-  item.className = "equipment-item";
-  item.innerHTML = `
-    <img src="${eq.image}" alt="${eq.name}">
-    <h4>${eq.name}</h4>
-    <p>${eq.description}</p>
-    <strong style="color:#53280a;">${eq.price}</strong>
-  `;
-  list.appendChild(item);
-});
+if (equipmentList) {
+  equipmentData.forEach((eq) => {
+    const item = document.createElement("div");
+    item.className = "equipment-item";
+    item.innerHTML = `
+      <img src="${eq.image}" alt="${eq.name}">
+      <h4>${eq.name}</h4>
+      <p>${eq.description}</p>
+      <strong style="color:#53280a;">${eq.price}</strong>
+    `;
+    equipmentList.appendChild(item);
+  });
+}
 
-// scrolling
-const scrollContainer = document.querySelector(".equipment-list");
-
-scrollContainer.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
-});
-
-// Testimonials
+// Testimonials Data
 const testimonials = [
   {
     name: "Maria Clara",
@@ -218,49 +207,27 @@ const testimonials = [
     feedback: "Beautiful interiors and attentive staff!",
     rating: 5,
   },
-  {
-    name: "Juan Dela Cruz",
-    venue: "Tala Room",
-    feedback: "Everything was smooth and organized. Highly recommended.",
-    rating: 4,
-  },
-
-  {
-    name: "Juan Dela Cruz",
-    venue: "Tala Room",
-    feedback: "Everything was smooth and organized. Highly recommended.",
-    rating: 4,
-  },
-  {
-    name: "Juan Dela Cruz",
-    venue: "Tala Room",
-    feedback: "Everything was smooth and organized. Highly recommended.",
-    rating: 4,
-  },
-  {
-    name: "Juan Dela Cruz",
-    venue: "Tala Room",
-    feedback: "Everything was smooth and organized. Highly recommended.",
-    rating: 4,
-  },
 ];
 
+// Render Testimonials
 function displayTestimonials() {
   const container = document.getElementById("testimonialList");
+  if (!container) return;
+
   container.innerHTML = testimonials
     .map(
       (t) => `
-    <div class="testimonial-card">
-      <p>${t.feedback}</p>
-      <div class="testimonial-footer">
-        ${t.name}
-        <span>${t.venue}</span>
-        <div class="stars">${"★".repeat(t.rating)}${"☆".repeat(
+      <div class="testimonial-card">
+        <p>${t.feedback}</p>
+        <div class="testimonial-footer">
+          ${t.name}
+          <span>${t.venue}</span>
+          <div class="stars">${"★".repeat(t.rating)}${"☆".repeat(
         5 - t.rating
       )}</div>
+        </div>
       </div>
-    </div>
-  `
+    `
     )
     .join("");
 }

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halina Page</title>
+    <link rel="stylesheet" href="mainbodystyle.css" />
+    <script type="text/javascript" src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/d7c47677ad.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="HalinaSystemLogo.png" />
+      </div>
+
+      <nav class="nav-links">
+        <a href="UserPage.html">HOME</a>
+        <a href="#About-US">ABOUT</a>
+        <a href="#">BOOKING</a>
+        <a href="Equipment.html">EQUIPMENT</a>
+        <a href="Contact.html">CONTACT</a>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      </nav>
+
+      <div class="sub-menu-wrap">
+        <div class="sub-menu">
+          <h2>Halina Event System</h2>
+          <hr />
+          <a href="#" class="sub-menu-link">
+            <p>Edit profile</p>
+            <span>&gt;</span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <p>Transaction History</p>
+            <span>&gt;</span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <p>Logout</p>
+            <span>&gt;</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- SERVICES  -->
+    <section class="services" id="Services">
+      <h1>BOOK NOW</h1>
+      <p>
+        Welcome to Halina Event Venue, where unforgettable moments are made.
+        Whether it's a wedding, birthday, corporate gathering, or any special
+        celebration, our elegant and versatile venue is designed to bring your
+        vision to life.
+      </p>
+
+      <div class="venues">
+        <div class="venue-items" onclick="openBookingModal('room')">
+          <img src="background.jpg" alt="img" />
+          <h3>Room</h3>
+          <p>
+            Our rooms provide a cozy, air-conditioned space ideal for small
+            celebrations or private meetings. Each one is thoughtfully designed
+            for comfort, convenience, and a welcoming atmosphere.
+          </p>
+        </div>
+
+        <div class="venue-items" onclick="openBookingModal('hall')">
+          <img src="background.png" alt="img" />
+          <h3>Hall</h3>
+          <p>
+            The event hall is spacious, elegant, and suited for weddings,
+            birthdays, and corporate functions. It features flexible layouts and
+            stylish decor to match any event theme or concept.
+          </p>
+        </div>
+
+        <div class="venue-items" onclick="openBookingModal('amenity')">
+          <img src="background.jpg" alt="img" />
+          <h3>Amenities</h3>
+          <p>
+            Halina Event Place includes a swimming pool, basketball court, and
+            landscaped garden for leisure and photos. Ample parking and clean
+            restrooms are also available for every guest’s comfort.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer/About us -->
+    <section id="About-US">
+      <h1>About Us</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+        praesentium perspiciatis modi voluptatem <br />
+        sunt officiis repellendus nam? Ratione magni soluta vitae iste aliquid,
+        <br />
+        laudantium culpa, repellendus earum corrupti a ad!
+      </p>
+      <div class="socials">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-facebook-messenger"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+      </div>
+      <p>© 2025 Halina Event Venue. All Rights Reserved.</p>
+    </section>
+
+    <!-- Booking -->
+    <div id="bookingModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="icon-close2" onclick="toggleModal()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="30px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#f8f7f6"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </span>
+        <div class="booking-container">
+          <form class="booking-form">
+            <h2>Room Booking</h2>
+
+            <div>
+              <label for="roomSelect">Room</label>
+              <select id="roomSelect" onchange="updateRoomDetails()">
+                <option value="tala">Tala</option>
+                <option value="sulyap">Sulyap</option>
+                <option value="gunita">Gunita</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="date">Start Date</label>
+              <input type="date" id="date" required />
+            </div>
+
+            <div>
+              <label for="date-end">End Date</label>
+              <input type="date" id="date" required />
+            </div>
+
+            <div>
+              <label for="time">Time In</label>
+              <input type="time" id="time" required />
+            </div>
+
+            <div>
+              <label for="guests">Guests</label>
+              <input type="number" id="guests" min="1" required />
+            </div>
+
+            <button type="submit">Book Now</button>
+          </form>
+
+          <div class="room-preview">
+            <img id="roomImage" src="background.jpg" alt="Room Image" />
+            <h5 id="roomPrice">₱10,000</h5>
+            <p id="roomDescription">
+              Tala is a cozy and elegant room perfect for intimate gatherings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
