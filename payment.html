@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment System</title>
-    <link rel="stylesheet" href="payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="payment.css">
+    <script type="text/javascript" src="payment.js" defer></script>
 </head>
 <body>
     <div class="payment-container">
@@ -35,52 +36,54 @@
 
         <div class="payment-content">
             <div class="payment-info">
-  <h2>Payment Information</h2>
-  <p class="secure-note">All transactions are secure and encrypted</p>
+                <h2>Payment Information</h2>
+                <p class="secure-note">All transactions are secure and encrypted</p>
 
-  <div class="form-group">
-    <label for="card-name">Name on Card</label>
-    <input type="text" id="card-name" placeholder="John Smith">
-  </div>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" placeholder="John Smith" required>
+                    </div>
 
-<div class="form-group">
-    <label for="card-number">Card Number</label>
-    <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
-<div class="card-icons">
-  <div class="card-icon"><i class="fa-brands fa-cc-visa"></i></div>
-  <div class="card-icon"><i class="fa-brands fa-cc-mastercard"></i></div>
-  <div class="card-icon"><i class="fa-brands fa-cc-amex"></i></div>
-  <div class="card-icon"><i class="fa-brands fa-cc-discover"></i></div>
-</div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                        <div class="card-icons">
+                            <div class="card-icon"><i class="fa-brands fa-cc-visa"></i></div>
+                            <div class="card-icon"><i class="fa-brands fa-cc-mastercard"></i></div>
+                            <div class="card-icon"><i class="fa-brands fa-cc-amex"></i></div>
+                            <div class="card-icon"><i class="fa-brands fa-cc-discover"></i></div>
+                        </div>
+                    </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label for="expiry">Expiry Date</label>
-      <input type="text" id="expiry" placeholder="MM/YY">
-    </div>
-    <div class="form-group">
-      <label for="cvv">CVV</label>
-      <input type="text" id="cvv" placeholder="123">
-    </div>
-  </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123" required>
+                        </div>
+                    </div>
 
-  <div class="form-group">
-    <label for="country">Country</label>
-    <select id="country">
-      <option>Philippines</option>
-      <option>United States</option>
-      <option>Canada</option>
-      <!-- Add more options -->
-    </select>
-  </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" required>
+                            <option value="">Select Country</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="United States">United States</option>
+                            <option value="Canada">Canada</option>
+                        </select>
+                    </div>
 
-  <div class="form-group">
-    <label for="zip">ZIP Code</label>
-    <input type="text" id="zip" placeholder="12345">
-  </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" id="zip" placeholder="12345" required>
+                    </div>
 
                     <div class="payment-actions">
-                        <button type="button" class="btn btn-back">Back</button>
+                        <button type="button" class="btn btn-back" id="backButton">Back</button>
                         <button type="submit" class="btn btn-pay">Pay Now</button>
                     </div>
                 </form>
@@ -133,19 +136,6 @@
         </div>
     </div>
 
-    <script>
-        // Simple form submission handler
-        document.getElementById('paymentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('paymentModal').classList.add('active');
-        });
-
-        // Close modal handler
-        document.getElementById('closeModal').addEventListener('click', function() {
-            document.getElementById('paymentModal').classList.remove('active');
-            // In a real app, you would redirect to a confirmation page
-            // window.location.href = 'confirmation.html';
-        });
-    </script>
+    <script src="payment.js"></script>
 </body>
 </html>
